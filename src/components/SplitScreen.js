@@ -3,22 +3,24 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
 `;
-
+//whatever we pass in to pane will replace the default weight here
 const Pane = styled.div`
-  flex: 1;
+  flex: ${props => props.weight}
 `;
 
 
 export const SplitScreen = ({
   left: Left,
-  right: Right
+  right: Right,
+  leftWeight = 1,
+  rightWeight = 1, 
 }) => {
   return (
     <Container>
-      <Pane>
+      <Pane weight={leftWeight}>
         <Left />
       </Pane>
-      <Pane>
+      <Pane weight={rightWeight}>
         <Right />
       </Pane>
     </Container>
