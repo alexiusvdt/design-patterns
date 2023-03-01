@@ -1,11 +1,12 @@
 import { SplitScreen } from "./components/SplitScreen";
 
+
 const LeftHandComponent = () => {
-  return <h1>Left!</h1>
+  return <h1 style={{ backgroundColor: 'green'}}>Left!</h1>
 }
 
 const RightHandComponent =() => {
-  return <p> Right!</p>
+  return <p style={{backgroundColor: 'red'}}> Right!</p>
 }
 
 function App() {
