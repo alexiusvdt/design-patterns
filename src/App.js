@@ -1,6 +1,9 @@
 import { RegularList } from "./components/RegularList"
+import {NumberedList} from "./components/NumberedList"
 import { SmallPersonListItem } from "./people/SmallPersonListItem";
 import { LargePersonListItem } from "./people/LargePersonListItem";
+import { LargeProductListItem } from "./products/LargeProductListItem";
+import { SmallProductListItem } from "./products/SmallProductListItem";
 
 const people = [{
   name: 'John doe',
@@ -30,12 +33,10 @@ const products = [{
   description: 'take 3 off your game',
   rating: 4.0
 }
-
-
-
 ]
 
-
+// with just a couple of different components we've allowed for so much more DRY code implementations!
+// this may not save much time now, but think of what happens when your codebase gets much larger...
 function App() {
   return (
     <>
@@ -50,6 +51,16 @@ function App() {
     items={people}
     resourceName="person"
     itemComponent={LargePersonListItem}
+    />
+    <RegularList 
+    items={products}
+    resourceName="product"
+    itemComponent={SmallProductListItem}
+    />
+    <NumberedList 
+    items={products}
+    resourceName="product"
+    itemComponent={LargeProductListItem}
     />
     </>
        
