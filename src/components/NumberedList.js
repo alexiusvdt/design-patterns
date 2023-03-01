@@ -3,7 +3,7 @@ export const RegularList = ({
   resourceName,
   itemComponent: ItemComponent
 }) => {
-  
+  let i;
   return (
     <>
     {/* this is the same list, but provides a numerical heading overtop  */}
